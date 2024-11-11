@@ -21,7 +21,3 @@ export default function App() {
 
 	)
 }
-
-// devo completare il secondo page Overlay
-
-// devo cambiare count in base alla larghezza del screen 

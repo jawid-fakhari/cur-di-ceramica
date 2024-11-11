@@ -7,8 +7,12 @@ export function Vaso(props) {
 
     const changeSkin = (data) => {
         const newSkin = useTexture(`/textures/${data}.jpg`);
-        const newMaterial = new THREE.MeshBasicMaterial({ map: newSkin })
-        newMaterial.needsUpdate = true;
+        newSkin.colorSpace = THREE.SRGBColorSpace;
+        newSkin.repeat.set(10, 10);
+        newSkin.rotation = Math.PI * 0.25;
+        const newMaterial = new THREE.MeshStandardMaterial({
+            map: newSkin,
+        })
         return newMaterial;
     }
 
