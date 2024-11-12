@@ -39,20 +39,18 @@ export function Vaso(props) {
                 >
 
                     <Html scale={10} rotation={[Math.PI * 0.5, Math.PI * 0.5, Math.PI * 0.1]} position={[10, -2, 7]} transform occlude>
-                        <div className="annotation">
-                            <span
-                                className='
-                                    font-light italic text-[0.2rem]
-                                    absolute top-[0.84rem] left-[0.32rem]
-                                '
-                            >i</span>
-                            <span
-                                id='flowerAnnotation'
-                                onClick={handleclick}
-                                className='text-[0.5rem] cursor-pointer'
-                            >
-                                ⚪
-                            </span>
+                        <div
+                            id='flowerAnnotation'
+                            className=" 
+                                opacity-80
+                                cursor-pointer 
+                                border-red-600 border-4 rounded-full
+                                duration-100
+                                hover:opacity-100
+                                hover:border-8
+                                "
+                            onClick={handleclick}
+                        >
                         </div>
                     </Html>
                 </mesh>

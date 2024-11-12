@@ -37,20 +37,18 @@ export function Ciotola(props) {
                     rotation={[Math.PI / 2, 0, 0]}
                 >
                     <Html scale={10} rotation={[Math.PI * 0.5, Math.PI, Math.PI * 1.05]} position={[5, 0, 9]} transform occlude>
-                        <div className="annotation">
-                            <span
-                                className='
-                                    font-light italic text-[0.2rem]
-                                    absolute top-[0.84rem] left-[0.32rem]
-                                '
-                            >i</span>
-                            <span
-                                id='identity'
-                                onClick={handleclick}
-                                className='text-[0.5rem] cursor-pointer'
-                            >
-                                ⚪
-                            </span>
+                        <div
+                            id='identity'
+                            className="
+                                opacity-80
+                                cursor-pointer 
+                                border-red-600 border-4 rounded-full
+                                duration-100 transition-all
+                                hover:opacity-100
+                                hover:border-8
+                                "
+                            onClick={handleclick}
+                        >
                         </div>
                     </Html>
                 </mesh>
