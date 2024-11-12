@@ -18,6 +18,8 @@ export default function Products() {
 
     const chooseModel = (model) => {
         setModel(model)
+        setInfoTextToShow('')
+        setSelectedTexture(null)
     }
 
     const visibleInfoText = (data) => {
@@ -28,7 +30,7 @@ export default function Products() {
         if (!model) return <Vaso onInfoText={visibleInfoText} texture={selectedTexture} />
         switch (model) {
             case 'ciotola':
-                return <Ciotola onInfoText={visibleInfoText} texture={selectedTexture} />
+                return < Ciotola onInfoText={visibleInfoText} texture={selectedTexture} />
             case 'vaso':
                 return <Vaso onInfoText={visibleInfoText} texture={selectedTexture} />
             default:
