@@ -14,7 +14,7 @@ export default function ProductsInterface(props) {
 
     const modelButtonHandler = (e) => {
         e.preventDefault();
-        props.onModel(e.target.id)
+        props.onModel(e.target.id);
     }
     /**
      * Functions

@@ -7,12 +7,12 @@ import { Suspense, useState } from 'react'
 
 
 export default function Products() {
-    const [model, setModel] = useState(<Ciotola />)
+    const [model, setModel] = useState()
+
     const [infoTextToShow, setInfoTextToShow] = useState('')
     const [selectedTexture, setSelectedTexture] = useState(null)
 
     const chooseTexture = (texture) => {
-        // Implement texture selection logic here
         setSelectedTexture(texture)
     }
 
@@ -25,6 +25,7 @@ export default function Products() {
     };
 
     const renderModel = () => {
+        if (!model) return <Vaso onInfoText={visibleInfoText} texture={selectedTexture} />
         switch (model) {
             case 'ciotola':
                 return <Ciotola onInfoText={visibleInfoText} texture={selectedTexture} />

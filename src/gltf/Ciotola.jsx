@@ -7,6 +7,11 @@ export function Ciotola(props) {
 
     const changeSkin = (data) => {
         const newSkin = useTexture(`/textures/${data}.jpg`);
+        newSkin.colorSpace = THREE.SRGBColorSpace;
+        newSkin.repeat.set(5, 5);
+        newSkin.wrapS = THREE.RepeatWrapping;
+        newSkin.wrapT = THREE.RepeatWrapping;
+        newSkin.rotation = Math.PI * 0.25;
         const newMaterial = new THREE.MeshBasicMaterial({ map: newSkin })
         newMaterial.needsUpdate = true;
         return newMaterial;
@@ -31,8 +36,14 @@ export function Ciotola(props) {
                     position={[0, 0, 0]}
                     rotation={[Math.PI / 2, 0, 0]}
                 >
-                    <Html scale={10} rotation={[Math.PI * 0.5, Math.PI, Math.PI * 0.2]} position={[5, 0, 9]} transform occlude>
+                    <Html scale={10} rotation={[Math.PI * 0.5, Math.PI, Math.PI * 1.05]} position={[5, 0, 9]} transform occlude>
                         <div className="annotation">
+                            <span
+                                className='
+                                    font-light italic text-[0.2rem]
+                                    absolute top-[0.84rem] left-[0.32rem]
+                                '
+                            >i</span>
                             <span
                                 id='identity'
                                 onClick={handleclick}
